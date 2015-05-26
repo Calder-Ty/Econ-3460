@@ -1,0 +1,42 @@
+---
+title: 'ECON 3640: Lesson 1: Getting to Know R'
+author: "Tyler Calder"
+output: html_document
+---
+#Reading Data into R
+Lets Jump into R by reading in a data set, and working with it so that we can see some concrete examples of what R can do. First off we need to make sure that we have downloaded the example file from Canvas and brought it into the R Project File. Now open the file in excel and then save it as a csv File. R has a package for reading Excel files, but its is best to always read them in as .csv files.
+
+Once you have read the CSV file type the following, either in your console or in your script editor and run the code.
+
+```{r}
+Data <- read.csv("ExampleData.csv", stringsAsFactors=TRUE, header=T)
+```
+
+# Functions
+
+Read.csv() is a function, that takes as a primary argument (or Necessary Argument) a CSV file name and reads that file into an R Enviroment. Functions themselves are vital to R and what you do in R. In short, functions are the "verbs" of R language, They tell the computer what to Do. Functions however Take Arguments That tell the computer how, where and With What to do the function. Don't worry to much as we will get into Functions later, but to start out lets break this one down.
+
+To begin We See that our code begins with "Data <-" this is called variable assignment, and we will get into that below. For now lets skip that and go to the function itself. 
+
+All functions begin with a "Function Call", in which you simply type the function into the code, in this instance we have:
+```{r,eval=F}
+read.csv(...)
+```
+
+As already mentioned read.csv() is a function for reading csv files into R. continuine on we see:
+
+```{r, eval=FALSE}
+read.csv("ExampleData.csv",...)
+```
+
+The First argument we give read.csv is a File name, which it can go find and read into your workspace/enviroment. Notice that their is a comma following the file name. Arguments must always be followed by commas to seperate them and let R know that you are telling it a different argument. lets continue:
+
+```{r, eval=False}
+read.csv(..., stringsAsFactors = TRUE,...)
+```
+
+stringsAsFactors tells the computer weather or not to read strings (Known as Characters in R) in as a special data type called Factors (We will get to data types further on in this lesson). It is a True/False Argument, were if it is TRUE, R will read Characters/strings as Factors, and if it is FALSE, it will not.
+
+```{r, eval=F}
+read.csv(..., header=T)
+```
